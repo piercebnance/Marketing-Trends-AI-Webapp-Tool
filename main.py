@@ -118,22 +118,5 @@ def chat(req: ChatRequest):
         "items": items
     }
 
-"""
-@app.post("/api/chat") #This doesnt work quite yet, fix soon
-def chat(req: ChatRequest):
-    # Step 1: call Exa
-    search_results = search_web(req.message)
 
-    # Step 2: send to LLM
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": req.message},
-            {"role": "assistant", "content": f"Here is context: {search_results}"}
-        ]
-    )
-
-    return {"response": response.choices[0].message.content}
-"""
     
