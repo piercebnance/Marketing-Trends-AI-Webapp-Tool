@@ -211,6 +211,12 @@
 
                 chatBox.innerHTML += `<div><b>You:</b> ${userMessage}</div>`;
                 input.value = "";
+            
+                // Thinking message with unique ID
+                const thinkingId = "thinking-" + Date.now();
+                chatBox.innerHTML += `<div id="${thinkingId}"><b>AI:</b> Thinking...</div>`;
+                chatBox.scrollTop = chatBox.scrollHeight;
+            
 
                 try {
                     const res = await fetch("/api/chat", {
