@@ -16,8 +16,8 @@ load_dotenv()
 #exa = Exa(api_key="Your Exa API key here")
 
 #can use these commands if you have an .env file setup
-#client = OpenAI( api_key=os.getenv("OPENAI_API_KEY") )
-#exa = Exa( api_key=os.getenv("EXA_API_KEY") )
+client = OpenAI( api_key=os.getenv("OPENAI_API_KEY") )
+exa = Exa( api_key=os.getenv("EXA_API_KEY") )
 
 class ChatRequest(BaseModel):
     message: str
