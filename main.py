@@ -15,9 +15,15 @@ load_dotenv()
 #client = OpenAI(api_key="Your OpenAI API key here")
 #exa = Exa(api_key="Your Exa API key here")
 
-#can use these commands if you have an .env file setup
-client = OpenAI( api_key=os.getenv("OPENAI_API_KEY") )
-exa = Exa( api_key=os.getenv("EXA_API_KEY") )
+# API keys needed for Exa and OpenAI. In production, set these as Render environment variables.
+openai_api_key = os.getenv("OPENAI_API_KEY")
+exa_api_key = os.getenv("EXA_API_KEY")
+
+if not openai_api_key or not exa_api_key:
+    raise RuntimeError("OPENAI_API_KEY and EXA_API_KEY must be set in environment variables.")
+
+client = OpenAI(api_key=openai_api_key)
+exa = Exa(api_key=exa_api_key)
 
 class ChatRequest(BaseModel):
     message: str
