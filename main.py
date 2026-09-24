@@ -11,13 +11,13 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# API keys needed for Exa and OpenAI, the AIs used for this app. Plug in your own keys here
+# API keys needed for Exa and OpenAI, the AIs used for this app. Plug in your own keys here if youre running locally
 #client = OpenAI(api_key="Your OpenAI API key here")
 #exa = Exa(api_key="Your Exa API key here")
 
 #can use these commands if you have an .env file setup
-client = OpenAI( api_key=os.getenv("OPENAI_API_KEY") )
-exa = Exa( api_key=os.getenv("EXA_API_KEY") )
+#client = OpenAI( api_key=os.getenv("OPENAI_API_KEY") )
+#exa = Exa( api_key=os.getenv("EXA_API_KEY") )
 
 class ChatRequest(BaseModel):
     message: str
